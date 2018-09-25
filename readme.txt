@@ -1,7 +1,7 @@
 Полезные настройки:
 git config --global credential.helper store 
 git config --global alias....
-Разобраться что делают.
+Разобраться что делают команды.
 
 0. Войти на GitHub
 1. Открыть репозиторий https://github.com/frozzen256/practice (основной репозиторий лабораторных)
