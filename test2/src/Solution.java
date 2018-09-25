@@ -2,9 +2,17 @@ import java.io.*;
 import java.math.*;
 import java.util.*;
 
-
 public class Solution {
-
+    /*
+	* Дано: n - количество чисел в массиве
+	*		ar - массив чисел
+	* 		1 <= n <= 10
+	*		0 <= ar[i] <= 10e10
+	*		Вычислить сумму чисел.
+	* Пример:
+	* 5
+	* 1000000001 1000000002 1000000003 1000000004 1000000005
+	*/
     // Complete the aVeryBigSum function below.
     static long aVeryBigSum(long[] ar) {
    
@@ -33,10 +41,8 @@ public class Solution {
         long result = aVeryBigSum(ar);
 
         bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
 
         bufferedWriter.close();
-
         scanner.close();
     }
 }

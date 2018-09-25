@@ -1,6 +1,22 @@
 import java.util.*;
 
 public class Solution {
+	/*
+ 	* Дано: n - количество чисел в массиве
+	*		ar - массив чисел
+	* 		0 < n < 100
+	*		-100 <= ar[i] <= 100
+	* Вычислить нормализованное количество положительных, отрицательных и нулевых элементов 
+	* Пример: 
+	*	6
+	*	-4 3 -9 0 4 1         
+	*	
+	*	Output
+	*	0.500000
+	*	0.333333
+	*	0.166667
+	*/
+	
    // Complete the plusMinus function below.
     static void plusMinus(int[] arr) {
    
