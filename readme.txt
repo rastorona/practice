@@ -1,6 +1,8 @@
 Полезные настройки:
 git config --global credential.helper store 
 git config --global alias....
+git config --global http.proxy http://login:pas@proxy:8080
+
 Разобраться что делают команды.
 
 0. Войти на GitHub
