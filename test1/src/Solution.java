@@ -5,6 +5,7 @@ public class Solution {
 
     // Complete the staircase function below.
     static void staircase(int n) {
+       // int
        }
     private static final Scanner scanner = new Scanner(System.in);
 
