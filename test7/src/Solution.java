@@ -21,8 +21,7 @@ public class Solution {
 	* Mouse C
 	*/
 	
-    // Complete the catAndMouse function below.
-    static String catAndMouse(int x, int y, int z) {
+    static String func1(int x, int y, int z) {
 	}
 	
     private static final Scanner scanner = new Scanner(System.in);
@@ -42,7 +41,7 @@ public class Solution {
 
             int z = Integer.parseInt(xyz[2]);
 
-            String result = catAndMouse(x, y, z);
+            String result = func1(x, y, z);
 
             bufferedWriter.write(result);
             bufferedWriter.newLine();

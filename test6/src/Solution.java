@@ -20,8 +20,7 @@ public class Solution {
     *	 \/\/
 	*/
 
-	// Complete the countingValleys function below.
-    static int countingValleys(int n, String s) {
+    static int func1(int n, String s) {
      
     }
 
@@ -35,7 +34,7 @@ public class Solution {
 
         String s = scanner.nextLine();
 
-        int result = countingValleys(n, s);
+        int result = func1(n, s);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

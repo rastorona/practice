@@ -8,14 +8,10 @@ public class Solution {
     /*
 	 * Дано время: часы:минуты:секунды(AM/PM)
 	 * Вывести время в формате 24-часа.
-	 * Пример: 06:15:11PM - 18:15:11	
-	 
-     * Complete the timeConversion function below.
+	 * Пример: 06:15:11PM - 18:15:11.
      */
-    static String timeConversion(String s) {
-        /*
-         * Write your code here.
-         */
+    static String func1(String s) {
+      
       
     }
 
@@ -26,7 +22,7 @@ public class Solution {
 
         String s = scan.nextLine();
 
-        String result = timeConversion(s);
+        String result = func1(s);
 
         bw.write(result);
 

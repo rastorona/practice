@@ -9,10 +9,8 @@ public class Solution {
 	*  ###
 	* ####
 	*/	
-	
-    // Complete the staircase function below.
-    
-	static void staircase(int n) {
+	    
+	static void func1(int n) {
      
        }
     
@@ -22,5 +20,5 @@ public class Solution {
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        staircase(n);
+        func1(n);
 	}	

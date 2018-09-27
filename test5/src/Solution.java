@@ -10,9 +10,9 @@ public class Solution {
 	* номер которого кратен четырём, но исключение делалось для тех, которые были кратны 100. Такие годы были високосными 
 	* только тогда, когда делились ещё и на 400.
 	*/
-    // Complete the dayOfProgrammer function below.
+  
     
-	static String dayOfProgrammer(int year) {
+	static String func1(int year) {
 	
 	}
 
@@ -22,7 +22,7 @@ public class Solution {
 
         int year = Integer.parseInt(bufferedReader.readLine().trim());
 
-        String result = dayOfProgrammer(year);
+        String result = func1(year);
 
         bufferedWriter.write(result);
         bufferedWriter.newLine();

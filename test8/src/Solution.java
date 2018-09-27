@@ -23,8 +23,7 @@ public class Solution {
 	* 3
 	*/
 	
-    // Complete the pickingNumbers function below.
-    static int pickingNumbers(int[] a) {
+    static int func1(int[] a) {
 
     }
 
@@ -46,7 +45,7 @@ public class Solution {
             a[i] = aItem;
         }
 
-        int result = pickingNumbers(a);
+        int result = func1(a);
 
         bufferedWriter.write(String.valueOf(result));
        

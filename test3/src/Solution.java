@@ -17,8 +17,8 @@ public class Solution {
 	*	0.166667
 	*/
 	
-   // Complete the plusMinus function below.
-    static void plusMinus(int[] arr) {
+	
+    static void func1(int[] arr) {
    
     }
 
@@ -38,7 +38,7 @@ public class Solution {
             arr[i] = arrItem;
         }
 
-        plusMinus(arr);
+        func1(arr);
 
         scanner.close();
     }

@@ -13,8 +13,8 @@ public class Solution {
 	* 5
 	* 1000000001 1000000002 1000000003 1000000004 1000000005
 	*/
-    // Complete the aVeryBigSum function below.
-    static long aVeryBigSum(long[] ar) {
+  
+  static long aSum(long[] b) {
    
     }
 
@@ -28,17 +28,17 @@ public class Solution {
         int arCount = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        long[] ar = new long[arCount];
+        long[] b = new long[arCount];
 
         String[] arItems = scanner.nextLine().split(" ");
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
         for (int i = 0; i < arCount; i++) {
             long arItem = Long.parseLong(arItems[i]);
-            ar[i] = arItem;
+            b[i] = arItem;
         }
 
-        long result = aVeryBigSum(ar);
+        long result = aSum(b);
 
         bufferedWriter.write(String.valueOf(result));
 
