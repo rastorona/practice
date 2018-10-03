@@ -25,8 +25,12 @@ public class Solution {
 	
     static int func1(int[] a) {
         Arrays.sort(a);
-        int max = 0, pmax = 1,i = 0,j = 1;
-        while (i < a.length) {
+        int max = 0, 
+			pmax = 1,
+			i = 0,
+			j = 1;
+       
+	   while (i < a.length) {
             if (max < pmax)
                 max = pmax;
             pmax = 1;
@@ -34,7 +38,7 @@ public class Solution {
                 pmax += 1;
                 j += 1;
             }
-            i += 1;
+            i ++;;
             j = i + 1;
         }
         return max;
@@ -60,9 +64,7 @@ public class Solution {
 
         int result = func1(a);
 	
-	System.out.println(result);
-
-        bufferedWriter.write(String.valueOf(result));
+	    bufferedWriter.write(String.valueOf(result));
        
         bufferedWriter.close();
         scanner.close();

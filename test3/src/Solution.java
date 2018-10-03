@@ -25,7 +25,6 @@ public class Main {
         scanner.close();
     }
 
-    public class Solution {
         /*
          * Дано: n - количество чисел в массиве
          *		ar - массив чисел
@@ -42,18 +41,18 @@ public class Main {
          *	0.166667
          */
 
-    }
+    
         static void func1(int[] arr) {
-        float pol=0;
-        float nul=0;
-        float otr=0;
-        for (int i:arr){
-            if (i>0)
-                pol= pol + 1;
+        float pol = 0;
+        float nul = 0;
+        float otr = 0;
+        for (int i : arr){
+            if (i > 0)
+                pol ++;
             else if (i == 0)
-                nul = nul + 1;
-                else if (i<0)
-                    otr = otr + 1;
+                nul ++;
+                else 
+                  otr ++;
             }
         System.out.println("Output:");
         System.out.printf("%.6f", pol / arr.length);
