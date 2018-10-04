@@ -1,4 +1,4 @@
-import java.io.*;
+﻿import java.io.*;
 import java.util.*;
 
 /*
@@ -14,6 +14,7 @@ import java.util.*;
 * Ответ:
 *	2
 */
+
 
 public class Solution {
 
