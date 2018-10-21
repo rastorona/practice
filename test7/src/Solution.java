@@ -20,10 +20,18 @@ public class Solution {
 	* Cat B
 	* Mouse C
 	*/
-	
+
     static String func1(int x, int y, int z) {
-	}
-	
+        x = Math.abs(z-x);
+        y = Math.abs(z-y);
+        if (x == y)
+            return "Mouse C";
+        else if (x < y)
+            return "Cat A";
+        else
+            return "Cat B";
+    }
+
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
@@ -41,13 +49,19 @@ public class Solution {
 
             int z = Integer.parseInt(xyz[2]);
 
+
             String result = func1(x, y, z);
+
+            System.out.println(result);
 
             bufferedWriter.write(result);
             bufferedWriter.newLine();
+
         }
 
         bufferedWriter.close();
+
+
 
         scanner.close();
     }
