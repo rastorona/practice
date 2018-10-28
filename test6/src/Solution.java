@@ -1,7 +1,5 @@
 package com.company;
 import java.io.*;
-
-
 public class Solution {
     private String s;
     private int n;
@@ -33,15 +31,11 @@ public class Solution {
         return J;
     }
     public void print()throws IOException{
-            File file = new File("out.txt");
-            file.createNewFile();
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file)); //System.getenv("OUTPUT_PATH")
-            bufferedWriter.write(String.valueOf(func1()));
-            bufferedWriter.newLine();
-            bufferedWriter.close();
-            System.out.println(func1());
-        }
-
-
-
+        File file = new File("out.txt");
+        file.createNewFile();
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file)); //System.getenv("OUTPUT_PATH")
+        bufferedWriter.write(String.valueOf(func1()));
+        bufferedWriter.newLine();
+        bufferedWriter.close();
+    }
 }
