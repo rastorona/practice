@@ -21,15 +21,28 @@ public class Solution {
 	* Mouse C
 	*/
 
-    static String func1(int x, int y, int z) {
-        x = Math.abs(z-x);
-        y = Math.abs(z-y);
-        if (x == y)
-            return "Mouse C";
-        else if (x < y)
-            return "Cat A";
-        else
-            return "Cat B";
+    public static class Tor{
+        private static int x, y, z;
+        public void Set(int a, int b, int c) {
+            x = a;
+            y = b;
+            z = c;
+        }
+        public static void Get() {
+            String Result = Tor.func1();
+            System.out.println(Result);
+        }
+        static String func1() {
+            x = Math.abs(z - x);
+            y = Math.abs(z - y);
+            if (x == y)
+                return "Mouse C";
+            else if (x > y)
+                return "Cat A";
+            else
+                return "Cat B";
+
+        }
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -49,19 +62,17 @@ public class Solution {
 
             int z = Integer.parseInt(xyz[2]);
 
+            Tor Dav = new Tor();
+            Dav.Set(x, y, z);
+            Tor.func1();
+            Tor.Get();
 
-            String result = func1(x, y, z);
 
-            System.out.println(result);
-
-            bufferedWriter.write(result);
+            bufferedWriter.write(Tor.func1());
             bufferedWriter.newLine();
-
         }
 
         bufferedWriter.close();
-
-
 
         scanner.close();
     }
