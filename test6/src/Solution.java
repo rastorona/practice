@@ -1,46 +1,41 @@
+package com.company;
 import java.io.*;
-import java.util.*;
-
 public class Solution {
-	/*
-	* Дано: n - число элементов в строке
-	*		s - строка
-	* 		2 <= n <= 10e6
-	*		s[i]= {UD}
-	* Эта строка описывает движение человека с уровня 0. D - шаг вниз; U - шаг вверх.
-	* Человек прошел долину, если спустился вниз и вернулся на уровень 0.
-	* Вывести число долин на пути следования.
-	* Пример:
-	* 8
-	* UDDDUDUU
-	* 1
-	*
-	*_/\      _
-	*   \    /
-    *	 \/\/
-	*/
-
-    static int func1(int n, String s) {
-     
+    private String s;
+    private int n;
+    public void setS(String s) {
+        this.s = s;
     }
-
-    private static final Scanner scanner = new Scanner(System.in);
-
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("out.txt")); //System.getenv("OUTPUT_PATH")
-
-        int n = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        String s = scanner.nextLine();
-
-        int result = func1(n, s);
-
-        bufferedWriter.write(String.valueOf(result));
+    public void setN(int n) {
+        this.n = n;
+    }
+    public int getN() {
+        return n;
+    }
+    public String getS() {
+        return s;
+    }
+    public int func1() {
+        int K = 0;
+        int J = 0;
+        for (int I = 0; I < s.length(); I++) {
+            if (s.charAt(I) == 'U') {
+                K += 1;
+            } else {
+                K -= 1;
+            }
+            if (K == 0 && s.charAt(I) == 'U') {
+                J += 1;
+            }
+        }
+        return J;
+    }
+    public void print()throws IOException{
+        File file = new File("out.txt");
+        file.createNewFile();
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file)); //System.getenv("OUTPUT_PATH")
+        bufferedWriter.write(String.valueOf(func1()));
         bufferedWriter.newLine();
-
         bufferedWriter.close();
-
-        scanner.close();
     }
 }
