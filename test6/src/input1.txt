@@ -1,0 +1,10 @@
+copy 1, 3
+insert "hello", 1
+paste 6
+undo
+redo
+delete 2, 7
+undo
+undo
+redo
+redo
