@@ -1,51 +1,39 @@
 package com.company;
 
+
+import java.lang.reflect.Constructor;
+
 import java.util.ArrayList;
 
 
 public class Invoker {
+    //Constructor
+    Invoker(){
+        commands = new java.util.Stack<>();
+        Buf=new Buf();
+        Buf.Set_Buffer("");
+        Stack=new Stack();
+     }
+    //Variables block
+    private String S;
+    private java.util.Stack<Command> commands;
+    private Buf Buf;
+    private Stack Stack;
+    //Void Block
     public void SetS(String S21){
         this.S=S21;
+        Buf.Set_Changeble(S);
     }
-    private String buffer;
-    private String S;
-    private ArrayList<Command> commands = new ArrayList<>();
-    private int current=-1;
-    private int maxcurrent=-1;
-    //
     public void  StoreCommand(Command command){
-        commands.add(command);
-        current+=1;
-        maxcurrent=current;
+        command.Set_Stack(Stack);
+        command.Set(Buf);
+        command.run();
+        commands.push(command);
     }
-    public void Undo(){
-        if(current>0){
-            current-=1;
-        }
+    public void ShowTheResult(){
+        System.out.println(Buf.Get_Changeble());
     }
-    public void Redo(){
-        if  (current<maxcurrent)
-            current+=1;
 
-    }
-    public String ShowTheResult(){
-        String Changeble=S;
-        for (int i=0;i<=current;i++){
-            (commands.get(i)).SetS(Changeble);
-            if (commands.get(i) instanceof Copy){
-                buffer = commands.get(i).run();
-            }
-            else {
-                if (commands.get(i) instanceof Paste){
-                    ((Paste) commands.get(i)).Setbuffer(buffer);
-                    Changeble=commands.get(i).run();
-                }
-                else {
-                    Changeble = commands.get(i).run();
-                }
-            }
-        }
-        return Changeble;
-    }
+
 
 }
