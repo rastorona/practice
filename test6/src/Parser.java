@@ -1,20 +1,11 @@
 package com.company;
-
-public class Solution {
-    //Constructor
-    Solution(String S21) {this.S = S21;}
-    //Initialization block
-    //Initialize of Variables
-    private String S;
-    private String buffer="";
-    //Initialization block
-    private Invoker invoker =new Invoker();
+public class Parser {
+    private static Command command;
     /*/////Void block
     ////////////////
     */
 
-    public void setfunc(String S1){
-        invoker.SetS(S);
+    public static Command setfunc(String S1){
         if (S1.length()>9) {
             if (S1.substring(0, 7).equals("insert ")) {
                 int K = 8;
@@ -48,7 +39,7 @@ public class Solution {
                     K += 1;
                 }
                 int Z1 = K + 3;
-                invoker.StoreCommand(new Insert(S1.substring(8, K), Integer.parseInt(S1.substring(Z1)), S));
+                command= (new Insert(S1.substring(8, K), Integer.parseInt(S1.substring(Z1))));
 
             }
             if (S1.substring(0, 7).equals("delete ")) {
@@ -82,7 +73,7 @@ public class Solution {
                     K += 1;
                 }
                 int Z1 = K + 3;
-                invoker.StoreCommand(new Delete(Integer.parseInt(S1.substring(7, Z1 - 3)), Integer.parseInt(S1.substring(Z1-1)), S));
+                command= (new Delete(Integer.parseInt(S1.substring(7, Z1 - 3)), Integer.parseInt(S1.substring(Z1-1))));
 
             }
         }
@@ -122,7 +113,7 @@ public class Solution {
                     K += 1;
                 }
                 int Z1 = K+3;
-                invoker.StoreCommand(new Copy(Integer.parseInt(S1.substring(5, Z1 - 3)), Integer.parseInt(S1.substring(Z1-1)), S));
+                command= (new Copy(Integer.parseInt(S1.substring(5, Z1 - 3)), Integer.parseInt(S1.substring(Z1-1))));
 
             }
         }
@@ -147,21 +138,19 @@ public class Solution {
                     K += 1;
                 }
                 int Z1 =K-1;
-                invoker.StoreCommand(new Paste(buffer, Integer.parseInt(S1.substring(Z1)), S));
+                command= (new Paste(
+                        Integer.parseInt(S1.substring(Z1))));
 
             }
         }
         if (S1.equals("redo")) {
 
-                invoker.Redo();
+            command= new Redo();
         }
         if (S1.equals("undo")) {
 
-                invoker.Undo();
+            command= new Undo();
         }
-    }
-    public void GetRes(){
-        System.out.println(invoker.ShowTheResult());
+        return command;
     }
 }
-
