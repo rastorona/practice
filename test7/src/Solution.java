@@ -1,68 +1,52 @@
-import java.io.*;
-import java.util.*;
+package com.company;
+import java.util.Scanner;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.lang.String;
+import java.util.logging.SimpleFormatter;
 
-public class Solution {
+public class Main {
 
-	/*
-	* Два кота и мышь в разных позициях на линии. Определить какой кот настигнет мыша первым. 
-	* Мышь не двигается, коты бегают с одной скоростью, старт синхронный. В случае одновременного
-	* нападения на мышь, коты вступают в бой, а мышь ретируется во-свояси.
-	* Если первый кот чемпион - вывести Cat A, если второй кот - Cat B, если мышь удрала - Mouse C.
-	* Дано: n - количество картежей координат зверей.
-	*		x y z - координата первого кота, второго и мыша.
-	*		1 <= n <= 100
-	* 		1 <= x, y, z <= 100
-	* Пример:
-	* 2
-	* 1 2 3
-	* 1 3 2
-	* 
-	* Cat B
-	* Mouse C
-	*/
+    public static class Mylogger{
+        private static final Logger log = Logger.getLogger(com.company.Main.Mylogger.class.getName());
+        public static void ConsoleLogger(){
+            log.setUseParentHandlers(false);
+            log.info("Успешное выполнение:1");
+        }
 
-    static String func1(int x, int y, int z) {
-        x = Math.abs(z-x);
-        y = Math.abs(z-y);
-        if (x == y)
-            return "Mouse C";
-        else if (x < y)
-            return "Cat A";
-        else
-            return "Cat B";
+        public static void SimpleFileLogger(){
+            FileHandler File;
+            File = new FileHandler("C:\kop\File.log");
+            log.addHandler(File);
+            log.info("Успешное выполнение:2");
+        }
+
+        public static void TimedFileLogger(){
+            FileHandler File;
+            File = new FileHandler("C:/kop/File.log");
+            log.addHandler(File);
+            SimpleFormatter formatter = new SimpleFormatter();
+            File.setFormatter(formatter);
+            log.info("Успешное выполнение:3");
+
+        }
+
+
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("out.txt"));//System.getenv("OUTPUT_PATH")
-
-        int q = scanner.nextInt();
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int qItr = 0; qItr < q; qItr++) {
-            String[] xyz = scanner.nextLine().split(" ");
-
-            int x = Integer.parseInt(xyz[0]);
-
-            int y = Integer.parseInt(xyz[1]);
-
-            int z = Integer.parseInt(xyz[2]);
+        if (n==1){ com.company.Main.Mylogger.ConsoleLogger(); }
+        else
+        {if(n==2){ com.company.Main.Mylogger.SimpleFileLogger();}
+        else
+        {if(n==3){
+            com.company.Main.Mylogger.TimedFileLogger();}
+        else{System.out.print("Ошибка");}}}
 
 
-            String result = func1(x, y, z);
-
-            System.out.println(result);
-
-            bufferedWriter.write(result);
-            bufferedWriter.newLine();
-
-        }
-
-        bufferedWriter.close();
-
-
-
-        scanner.close();
     }
 }
