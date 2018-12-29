@@ -35,5 +35,4 @@ public class Copy implements Command {
         buf.Set_Buffer(buffer);
     }
 
-
 }
