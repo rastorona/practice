@@ -2,7 +2,6 @@ package com.company;
 
 public class Delete implements Command {
     //Constructor
-
     Delete(int pos,int pos1){
         this.pos=pos;
         this.pos1=pos1;
